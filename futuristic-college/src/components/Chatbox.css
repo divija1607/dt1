@@ -1,0 +1,79 @@
+/* Floating AI Orb */
+
+.ai-orb {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+
+  width: 70px;
+  height: 70px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+
+  background: radial-gradient(circle, #d6b3ff, #3a005f);
+
+  color: black;
+
+  box-shadow:
+    0 0 10px #00f7ff,
+    0 0 20px #00f7ff,
+    0 0 40px #00f7ff;
+
+  cursor: pointer;
+
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Floating animation */
+
+@keyframes float {
+
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+
+}
+
+
+/* Chat Window */
+
+.chat-window {
+
+  position: fixed;
+
+  bottom: 110px;
+  right: 25px;
+
+  width: 260px;
+
+  background: #0a0a0a;
+
+  border: 1px solid #00f7ff;
+
+  padding: 15px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 0 20px #00f7ff;
+
+}
+
+
+.chat-window {
+  border: 1px solid #d6b3ff;
+  box-shadow: 0 0 20px #d6b3ff;
+}
