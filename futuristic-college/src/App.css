@@ -6,162 +6,223 @@
   box-sizing:border-box;
 }
 
-html,body,#root{
+html, body, #root{
   height:100%;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 
-/* BACKGROUND IMAGE */
+/* BODY */
 
 body{
-
-  background-image: url("/campus-bg.jpg");  /* make sure file name matches */
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
+  background:#0a0015;
   color:white;
 }
 
 
-/* DARK OVERLAY (important for readability) */
+/* ================= NAVBAR ================= */
 
-body::before{
-  content:"";
-  position:fixed;
-  top:0;
-  left:0;
+/* NAVBAR FULL WIDTH */
+
+.navbar{
   width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.6);
-  z-index:-1;
-}
-
-
-/* NAVBAR */
-
-nav{
-
   display:flex;
-  justify-content:space-around;
+  justify-content:center;
   align-items:center;
 
-  padding:20px;
-
-  background:black;
-
+  padding:25px 0;
+  background:rgba(0,0,0,0.9);
 }
 
+/* CONTAINER */
 
-/* NAV LINKS */
+.nav-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
 
-a{
+  gap:40px;   /* BIG spacing */
+}
+
+/* BOX BUTTONS */
+
+.nav-box{
+  padding:15px 35px;   /* BIGGER */
+
+  border:2px solid #d6b3ff;
+  border-radius:14px;
+
+  font-size:18px;   /* BIG TEXT */
 
   color:#d6b3ff;
-
   text-decoration:none;
-
   font-weight:bold;
 
-  transition:0.3s;
+  background:rgba(0,0,0,0.6);
 
+  transition:all 0.3s ease;
 }
 
-a:hover{
+/* HOVER */
 
-  text-shadow:
-  0 0 5px #d6b3ff,
-  0 0 10px #d6b3ff,
-  0 0 20px #d6b3ff;
+.nav-box:hover{
+  background:#d6b3ff;
+  color:black;
 
+  box-shadow:
+    0 0 15px #d6b3ff,
+    0 0 35px #d6b3ff;
+
+  transform:scale(1.12);
 }
 
-
-/* HERO SECTION */
-
-.hero-container{
-
-  min-height:80vh;
-
-  display:flex;
-
-  flex-direction:column;
-
-  justify-content:center;
-
-  align-items:center;
-
-  text-align:center;
-
-  padding:20px;
-
-}
-
-
-/* HERO TITLE */
+/* ================= HERO ================= */
 
 .hero-title{
-
-  font-size:64px;
-
+  font-size:60px;
   color:#d6b3ff;
 
   text-shadow:
-  0 0 10px #d6b3ff,
-  0 0 20px #d6b3ff,
-  0 0 40px #d6b3ff;
-
+    0 0 10px #d6b3ff,
+    0 0 20px #d6b3ff,
+    0 0 40px #d6b3ff;
 }
-
-
-/* HERO TEXT */
 
 .hero-subtitle{
-
   margin-top:20px;
-
   font-size:20px;
-
-  max-width:700px;
-
-  opacity:0.9;
-
 }
 
-
-/* BUTTON */
-
 .hero-button{
-
   margin-top:30px;
-
   padding:12px 25px;
 
   border:2px solid #d6b3ff;
 
   background:transparent;
-
   color:#d6b3ff;
 
-  font-size:16px;
-
   cursor:pointer;
-
   transition:0.3s;
-
 }
 
 .hero-button:hover{
-
   background:#d6b3ff;
-
   color:black;
 
   box-shadow:
-  0 0 10px #d6b3ff,
-  0 0 25px #d6b3ff;
+    0 0 10px #d6b3ff,
+    0 0 25px #d6b3ff;
+}
 
+
+/* ================= SECTIONS ================= */
+
+.section{
+  min-height:80vh;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+  padding:40px;
+}
+
+
+/* ================= CARDS ================= */
+
+.card{
+  background:rgba(0,0,0,0.6);
+  padding:20px;
+  border-radius:12px;
+
+  box-shadow:0 0 15px #d6b3ff;
+
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:scale(1.05);
+}
+
+
+/* GRID FOR CARDS */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:25px;
+
+  max-width:1000px;
+  margin:0 auto;
+}
+/* ===== MODAL (PASTE HERE AT BOTTOM) ===== */
+
+.modal-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+
+  width:100vw;
+  height:100vh;
+
+  background:rgba(0,0,0,0.7);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  z-index:9999;
+}
+
+.modal-box{
+  background:#0a0015;
+
+  padding:30px 40px;
+  border-radius:12px;
+
+  border:2px solid #d6b3ff;
+
+  text-align:center;
+
+  width:350px;
+
+  box-shadow:
+    0 0 20px #d6b3ff,
+    0 0 50px #d6b3ff;
+
+  animation: popup 0.3s ease;
+}
+
+.modal-box ul{
+  margin-top:15px;
+  list-style:none;
+}
+
+.modal-box li{
+  margin:10px 0;
+}
+
+.close-btn{
+  margin-top:20px;
+  padding:10px 20px;
+
+  border:none;
+  background:#d6b3ff;
+  color:black;
+
+  cursor:pointer;
+}
+
+@keyframes popup{
+  from{
+    transform:scale(0.8);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
 }

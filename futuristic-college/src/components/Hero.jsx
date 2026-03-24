@@ -1,49 +1,85 @@
+import { useState } from "react";
+
 export default function Hero() {
+  const [showCourses, setShowCourses] = useState(false);
+
   return (
     <section
       style={{
-        minHeight: "80vh",
+        height: "90vh",
+        backgroundImage: "url('/campus.jpeg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        position: "relative",
         display: "flex",
-        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        textAlign: "center",
-        padding: "20px"
       }}
     >
 
-      <h1
+      {/* DARK OVERLAY */}
+      <div
         style={{
-          fontSize: "64px",
-          color: "#d6b3ff",
-          marginBottom: "20px",
-          textShadow: "0 0 10px #d6b3ff, 0 0 20px #d6b3ff"
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          background: "rgba(0,0,0,0.5)"
         }}
-      >
-        Futuristic College 2050
-      </h1>
+      ></div>
 
-      <p
+      {/* CONTENT */}
+      <div
         style={{
-          fontSize: "20px",
-          maxWidth: "700px",
-          marginBottom: "30px"
+          position: "relative",
+          zIndex: 1,
+          textAlign: "center",
+          color: "white",
         }}
       >
-        Experience the future of education with AI, smart campuses and immersive learning.
-      </p>
+        <h1 className="hero-title animate">
+          NovaTech University
+        </h1>
 
-      <button
-        style={{
-          padding: "12px 25px",
-          border: "2px solid #d6b3ff",
-          background: "transparent",
-          color: "#d6b3ff",
-          cursor: "pointer"
-        }}
-      >
-        Explore Campus
-      </button>
+        <p className="hero-subtitle">
+          Experience the future of education with AI and smart technology
+        </p>
+
+        <button
+          className="hero-button"
+          onClick={() => setShowCourses(true)}
+        >
+          Explore Future
+        </button>
+      </div>
+
+      {/* POPUP */}
+      {showCourses && (
+        <div className="modal-overlay">
+          <div className="modal-box">
+
+            <h2>Courses in 2050 🚀</h2>
+
+            <ul>
+              <li>AI Engineering</li>
+              <li>Robotics & Automation</li>
+              <li>Space Technology</li>
+              <li>Cyber Security</li>
+              <li>Quantum Computing</li>
+              <li>Virtual Reality Design</li>
+            </ul>
+
+            <button
+              className="close-btn"
+              onClick={() => setShowCourses(false)}
+            >
+              Close
+            </button>
+
+          </div>
+        </div>
+      )}
 
     </section>
   );

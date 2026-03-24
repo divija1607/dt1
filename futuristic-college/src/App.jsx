@@ -3,7 +3,7 @@ import Loader from "./components/Loader"
 import DroneTaxi from "./components/DroneTaxi";
 import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
-
+import "./App.css";
 import Labs from "./components/Labs"
 import StudentLife from "./components/StudentLife"
 import Chatbot from "./components/Chatbot"
